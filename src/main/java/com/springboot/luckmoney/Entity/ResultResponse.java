@@ -1,6 +1,6 @@
 package com.springboot.luckmoney.Entity;
 
-public class ResultResponse<T>{
+public class ResultResponse<T> {
 
     public Integer code;
 

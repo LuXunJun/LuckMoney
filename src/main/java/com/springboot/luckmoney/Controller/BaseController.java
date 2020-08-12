@@ -8,11 +8,11 @@ public class BaseController {
 
     private final static Logger logger = (Logger) LoggerFactory.getLogger(BaseController.class);
 
-    public void PrintLogInfo(String format,Object obj){
+    public void PrintLogInfo(String format, Object obj) {
         logger.info(format, obj);
     }
 
-    public void PrintLogError(String format,Object obj){
+    public void PrintLogError(String format, Object obj) {
         logger.error(format, obj);
     }
 

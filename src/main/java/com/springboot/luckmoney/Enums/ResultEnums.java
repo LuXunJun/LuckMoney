@@ -1,10 +1,9 @@
 package com.springboot.luckmoney.Enums;
 
 public enum ResultEnums {
-    EROR (-1,"错误信息"),
-    SUCCESS (0,"成功"),
-    ERROR1 (100,"金额大于100")
-    ;
+    EROR(-1, "错误信息"),
+    SUCCESS(0, "成功"),
+    ERROR1(100, "金额大于100");
     private Integer code;
     private String Message;
 

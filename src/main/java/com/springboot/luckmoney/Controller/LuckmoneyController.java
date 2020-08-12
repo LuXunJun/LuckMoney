@@ -25,25 +25,25 @@ public class LuckmoneyController extends BaseController {
     private LuckMoneyByService service;
 
     @GetMapping("/Luckmoneys")
-    public List<LuckMoney> List(){
+    public List<LuckMoney> List() {
         return helper.findAll();
     }
 
     @GetMapping("/Luckmoneys/{id}")
-    public ResultResponse getById(@PathVariable("id") Integer id){
+    public ResultResponse getById(@PathVariable("id") Integer id) {
         return ResultUtil.success(service.getById(id));
 
     }
 
     /*这个只是争对form表单的提交*/
     @PostMapping("/SaveLuckmoneys")
-    public ResultResponse<?> Save(@Valid LuckMoney money, BindingResult bindingResult){
+    public ResultResponse<?> Save(@Valid LuckMoney money, BindingResult bindingResult) {
         ResultResponse response = new ResultResponse();
         response.setCode(1);
-        if(bindingResult.hasErrors()){
-            PrintLogError("错误:{}",bindingResult.getFieldError().getDefaultMessage());
+        if (bindingResult.hasErrors()) {
+            PrintLogError("错误:{}", bindingResult.getFieldError().getDefaultMessage());
             response.setCode(1);
-            response.setMessage("错误:{" +  bindingResult.getFieldError().getDefaultMessage() +"}");
+            response.setMessage("错误:{" + bindingResult.getFieldError().getDefaultMessage() + "}");
             return response;
         }
         LuckMoney m = money;
@@ -54,7 +54,7 @@ public class LuckmoneyController extends BaseController {
 
     /*请求方为json格式 API请求*/
     @RequestMapping(value = "/LuckMoneyByJson", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public void LuckMoneyByJson(@RequestBody LuckMoneyRequest request){
+    public void LuckMoneyByJson(@RequestBody LuckMoneyRequest request) {
         System.out.println(request);
     }
 }

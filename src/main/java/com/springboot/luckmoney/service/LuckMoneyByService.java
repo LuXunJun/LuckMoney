@@ -19,7 +19,7 @@ public class LuckMoneyByService {
     public LuckMoney getById(Integer id) throws LuckymoneyException {
         Optional<LuckMoney> source = helper.findById(id);
         LuckMoney luckmoney = source.get();
-        if(luckmoney.getMoney().compareTo(new BigDecimal(100)) == 1) {
+        if (luckmoney.getMoney().compareTo(new BigDecimal(100)) == 1) {
             throw new LuckymoneyException(ResultEnums.ERROR1);
         }
         return luckmoney;
